@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸好-生活里的微小确幸与情感治愈指南</title>
+    <meta name="description" content="幸好网致力于记录和分享生活中的微小确幸、情感治愈故事与积极向上的生活态度。在这里，发现平凡日子里的温暖瞬间，让心灵获得慰藉与力量。">
+    <meta name="keywords" content="幸好, 生活治愈, 情感故事, 微小确幸, 心灵鸡汤, 积极生活">
+    <style>
+        :root {
+            --primary-color: #6a89cc;
+            --secondary-color: #82ccdd;
+            --accent-color: #e55039;
+            --text-dark: #2f3542;
+            --text-light: #747d8c;
+            --bg-body: #f1f2f6;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 主要内容区 */
+        main {
+            padding-bottom: 4rem;
+        }
+
+        /* 分类标签 */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tag {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--bg-card);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-tag.active, .category-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 网格布局 */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+
+        /* 侧边栏 */
+        aside {
+            grid-column: span 3;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f1f2f6;
+        }
+
+        .daily-quote {
+            font-style: italic;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .daily-quote strong {
+            display: block;
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .topic-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .topic-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .topic-list .count {
+            background-color: #f1f2f6;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* 文章列表 */
+        .content-area {
+            grid-column: span 9;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image {
+            height: 250px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: "→";
+            margin-left: 0.3rem;
+            transition: transform 0.2s;
+        }
+
+        .article-card:hover .read-more::after {
+            transform: translateX(5px);
+        }
+
+        /* 留言板 */
+        .guestbook {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .guestbook h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #dfe4ea;
+            border-radius: 8px;
+            resize: vertical;
+            min-height: 100px;
+            margin-bottom: 1rem;
+            font-family: inherit;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background-color: #5a7fc4;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--text-dark);
+            color: #a4b0be;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 900px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            aside {
+                grid-column: span 1;
+            }
+            .content-area {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-links a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+                <span>幸好</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">治愈故事</a></li>
+                    <li><a href="#">生活碎片</a></li>
+                    <li><a href="#">情感专栏</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container">
+            <h1>幸好，生活总有光</h1>
+            <p>在忙碌与疲惫的缝隙里，收集那些让你嘴角上扬的瞬间。</p>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="container">
+        
+        <!-- 分类筛选 -->
+        <div class="categories">
+            <span class="category-tag active">全部</span>
+            <span class="category-tag">暖心瞬间</span>
+            <span class="category-tag">生活感悟</span>
+            <span class="category-tag">治愈插画</span>
+            <span class="category-tag">日常小确幸</span>
+        </div>
+
+        <div class="grid-layout">
+            <!-- 侧边栏 -->
+            <aside>
+                <!-- 每日一句 -->
+                <div class="widget">
+                    <h3 class="widget-title">今日幸事</h3>
+                    <div class="daily-quote">
+                        “生活不是等待暴风雨过去，而是学会在雨中跳舞。”
+                        <strong>—— 维维安·格林</strong>
+                    </div>
+                </div>
+
+                <!-- 热门话题 -->
+                <div class="widget">
+                    <h3 class="widget-title">热门话题</h3>
+                    <ul class="topic-list">
+                        <li><a href="#">#下班路上的晚霞</a> <span class="count">2.3k</span></li>
+                        <li><a href="#">#治愈系美食</a> <span class="count">1.8k</span></li>
+                        <li><a href="#">#猫咪的治愈时刻</a> <span class="count">950</span></li>
+                        <li><a href="#">#独处的快乐</a> <span class="count">820</span></li>
+                        <li><a href="#">#微小的成就</a> <span class="count">670</span></li>
+                    </ul>
+                </div>
+
+                <!-- 订阅框 -->
+                <div class="widget">
+                    <h3 class="widget-title">订阅更新</h3>
+                    <p style="font-size: 0.9rem; color: #747d8c; margin-bottom: 1rem;">每周三发送，分享精选的治愈内容。</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="email" placeholder="您的邮箱" style="flex: 1; padding: 0.5rem; border: 1px solid #dfe4ea; border-radius: 4px;">
+                        <button style="padding: 0.5rem 1rem; background: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">订阅</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 文章内容区 -->
+            <section class="content-area">
+                
+                <!-- 文章 1 -->
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/sunshine/800/400" alt="阳光下的公园" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>生活碎片</span>
+                            <span>•</span>
+                            <span>2小时前</span>
+                        </div>
+                        <h2 class="article-title">幸好，今天阳光很好</h2>
+                        <p class="article-excerpt">午休的时候去楼下走了走，发现路边的樱花开了，虽然不是最茂盛的时候，但那种粉嫩的颜色真的很治愈。原来只要抬起头，美好一直都在。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+
+                <!-- 文章 2 -->
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/coffee/800/400" alt="一杯热咖啡" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>治愈美食</span>
+                            <span>•</span>
+                            <span>昨天</span>
+                        </div>
+                        <h2 class="article-title">幸好，还有一杯热咖啡</h2>
+                        <p class="article-excerpt">加班到深夜，走出写字楼时，街角的咖啡店还亮着灯。点了一杯热拿铁，看着热气袅袅升起，觉得这一天的疲惫好像都被温暖包裹了。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+
+                <!-- 文章 3 -->
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/forest/800/400" alt="森林小径" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span>自然风景</span>
+                            <span>•</span>
+                            <span>3天前</span>
+                        </div>
+                        <h2 class="article-title">幸好，逃离了城市的喧嚣</h2>
+                        <p class="article-excerpt">周末去了一次郊外，空气里都是泥土和树叶的味道。走在林间小道上，听着鸟叫虫鸣，突然觉得之前焦虑的事情，其实也没那么重要。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+
+                <!-- 留言板 -->
+                <div class="guestbook">
+                    <h2>写下你的“幸好”</h2>
+                    <p style="margin-bottom: 1.5rem; color: #747d8c;">这里是一个树洞，记录你生活中那些让你感到庆幸、温暖的小事。</p>
+                    <div class="form-group">
+                        <textarea placeholder="例如：幸好，今天赶上了地铁..."></textarea>
+                        <button class="submit-btn">分享我的故事</button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <div class="copyright">
+                <p>&copy; 2023 幸好网. 保留所有权利.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">联系方式</a>
+                <a href="#">隐私政策</a>
+                <a href="#">免责声明</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 广告代码 -->
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
