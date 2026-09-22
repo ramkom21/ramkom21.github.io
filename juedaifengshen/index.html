@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="绝代封神漫画在线阅读平台，提供最新绝代封神章节、高清大图、人物图鉴及精彩剧情解析。收录热门玄幻热血漫画，打造极致的阅读体验。">
+    <meta name="keywords" content="绝代封神,绝代封神漫画,绝代封神在线阅读,玄幻漫画,热血漫画">
+    <title>绝代封神-热血玄幻漫画连载与在线阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c0392b;
+            --secondary-color: #2c3e50;
+            --accent-color: #f1c40f;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #7f8c8d;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #a93226;
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a69bd 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23ffffff" fill-opacity="0.05"><path d="M50 0 L100 50 L50 100 L0 50 Z"/></g></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #2c3e50;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-hero {
+            padding: 12px 30px;
+            font-size: 16px;
+            background: white;
+            color: var(--secondary-color);
+        }
+
+        .btn-hero:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Section Styles */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            color: var(--secondary-color);
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Comic Grid */
+        .comic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .comic-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .comic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .comic-card:hover .card-cover img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px 10px 10px;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            opacity: 0.8;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .update-tag {
+            background: var(--accent-color);
+            color: #2c3e50;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .ranking-list li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .rank-num {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ddd;
+            width: 25px;
+            text-align: center;
+        }
+
+        .rank-num.top-1 { color: #f1c40f; }
+        .rank-num.top-2 { color: #bdc3c7; }
+        .rank-num.top-3 { color: #cd7f32; }
+
+        .rank-info h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .rank-info p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            box-shadow: var(--shadow);
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #eee;
+            background: transparent;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-main);
+            white-space: nowrap;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Detail Page Simulation (Intro) */
+        .intro-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .intro-content h2 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .intro-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+
+        .tag-cloud {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                绝代封神 <span>漫画</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">连载中</a></li>
+                    <li><a href="#">完结作品</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">作者专区</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline" onclick="showToast('请先登录')">登录</button>
+                <button class="btn btn-primary" onclick="showToast('注册功能开发中')">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">本周热门推荐</span>
+            <h1>绝代封神：燃动神话，重塑封神榜</h1>
+            <p>穿越千年神话时代，看主角如何以凡人之躯，逆天改命，登临神座。最新章节火热更新，高清大图免费畅读。</p>
+            <div class="hero-buttons">
+                <button class="btn btn-hero" onclick="scrollToContent()">立即阅读</button>
+                <button class="btn btn-hero" style="background:transparent; border:1px solid white;" onclick="showToast('加入书架')">加入书架</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content Area -->
+        <main id="comic-list">
+            
+            <!-- Filter -->
+            <div class="filter-bar">
+                <button class="filter-btn active">全部</button>
+                <button class="filter-btn">玄幻</button>
+                <button class="filter-btn">热血</button>
+                <button class="filter-btn">仙侠</button>
+                <button class="filter-btn">穿越</button>
+                <button class="filter-btn">东方幻想</button>
+            </div>
+
+            <!-- Intro / Synopsis -->
+            <article class="intro-section">
+                <div class="intro-content">
+                    <h2>作品简介</h2>
+                    <p>《绝代封神》是一部融合了传统神话与热血战斗的现代玄幻漫画。故事背景设定在洪荒时代与现世的交错点，主角林风意外获得上古神器“封神玉简”，开启了一段波澜壮阔的封神之路。在这个力量至上的世界里，妖魔横行，神灵隐匿，凡人命如草芥。林风凭借坚韧不拔的意志和过人的智慧，在生死边缘不断突破自我，集结伙伴，对抗强敌，最终揭开天地大劫的真相，重写封神榜的宿命。</p>
+                    <p>作品画风精美，打斗场面极具张力，人物塑造饱满，既有传统的侠义精神，又融入了现代读者的审美需求，是一部不可错过的国漫精品。</p>
+                    <div class="tag-cloud">
+                        <span class="tag">#热血战斗</span>
+                        <span class="tag">#洪荒神话</span>
+                        <span class="tag">#逆天改命</span>
+                        <span class="tag">#高燃</span>
+                        <span class="tag">#国漫之光</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Latest Updates -->
+            <section>
+                <div class="section-title">
+                    <h2>最新章节</h2>
+                    <a href="#" class="section-more">查看更多 &raquo;</a>
+                </div>
+                
+                <div class="comic-grid">
+                    <!-- Card 1 -->
+                    <div class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic1/300/450" alt="绝代封神第128章">
+                            <div class="card-overlay">
+                                <div class="card-title">第128章：决战前夕</div>
+                                <div class="card-meta">
+                                    <span>昨天 12:30</span>
+                                    <span class="update-tag">更新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic2/300/450" alt="绝代封神第127章">
+                            <div class="card-overlay">
+                                <div class="card-title">第127章：秘境开启</div>
+                                <div class="card-meta">
+                                    <span>3天前</span>
+                                    <span class="update-tag">更新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic3/300/450" alt="绝代封神第126章">
+                            <div class="card-overlay">
+                                <div class="card-title">第126章：暗流涌动</div>
+                                <div class="card-meta">
+                                    <span>5天前</span>
+                                    <span class="update-tag">更新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic4/300/450" alt="绝代封神第125章">
+                            <div class="card-overlay">
+                                <div class="card-title">第125章：血战魔尊</div>
+                                <div class="card-meta">
+                                    <span>1周前</span>
+                                    <span class="update-tag">更新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Card 5 -->
+                     <div class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic5/300/450" alt="绝代封神第124章">
+                            <div class="card-overlay">
+                                <div class="card-title">第124章：真相大白</div>
+                                <div class="card-meta">
+                                    <span>1周前</span>
+                                    <span class="update-tag">更新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Card 6 -->
+                     <div class="comic-card">
+                        <div class="card-cover">
+                            <img src="https://picsum.photos/seed/comic6/300/450" alt="绝代封神第123章">
+                            <div class="card-overlay">
+                                <div class="card-title">第123章：破茧成蝶</div>
+                                <div class="card-meta">
+                                    <span>2周前</span>
+                                    <span class="update-tag">更新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ranking -->
+            <section>
+                <div class="section-title">
+                    <h2>人气飙升榜</h2>
+                    <a href="#" class="section-more">排行榜 &raquo;</a>
+                </div>
+                <div class="comic-grid" style="grid-template-columns: 1fr;">
+                    <div class="ranking-list">
+                        <li>
+                            <span class="rank-num top-1">1</span>
+                            <div class="rank-info">
+                                <h4>绝代封神</h4>
+                                <p>热度: 98.5万</p>
+                            </div>
+                            <button class="btn btn-outline" style="margin-left:auto; padding:4px 12px; font-size:12px;">阅读</button>
+                        </li>
+                        <li>
+                            <span class="rank-num top-2">2</span>
+                            <div class="rank-info">
+                                <h4>万古神帝</h4>
+                                <p>热度: 92.1万</p>
+                            </div>
+                            <button class="btn btn-outline" style="margin-left:auto; padding:4px 12px; font-size:12px;">阅读</button>
+                        </li>
+                        <li>
+                            <span class="rank-num top-3">3</span>
+                            <div class="rank-info">
+                                <h4>遮天</h4>
+                                <p>热度: 88.4万</p>
+                            </div>
+                            <button class="btn btn-outline" style="margin-left:auto; padding:4px 12px; font-size:12px;">阅读</button>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <div class="rank-info">
+                                <h4>完美世界</h4>
+                                <p>热度: 85.2万</p>
+                            </div>
+                            <button class="btn btn-outline" style="margin-left:auto; padding:4px 12px; font-size:12px;">阅读</button>
+                        </li>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门分类</h3>
+                <ul>
+                    <li><a href="#">玄幻修真 <span>(1024)</span></a></li>
+                    <li><a href="#">高武世界 <span>(890)</span></a></li>
+                    <li><a href="#">东方玄幻 <span>(756)</span></a></li>
+                    <li><a href="#">仙侠神话 <span>(632)</span></a></li>
+                    <li><a href="#">异兽进化 <span>(540)</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">阅读助手</h3>
+                <ul style="font-size:14px; color:#666;">
+                    <li style="margin-bottom:10px;">• 自动翻页设置</li>
+                    <li style="margin-bottom:10px;">• 缩放比例调整</li>
+                    <li style="margin-bottom:10px;">• 夜间模式切换</li>
+                    <li style="margin-bottom:10px;">• 书签管理功能</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget" style="background: linear-gradient(135deg, #c0392b, #e74c3c); color: white;">
+                <h3 class="widget-title" style="border-bottom-color: rgba(255,255,255,0.2);">加入VIP会员</h3>
+                <p style="font-size:12px; margin-bottom:15px; opacity:0.9;">解锁全站付费章节，无广告畅读。</p>
+                <button class="btn btn-hero" style="width:100%; background:white; color:#c0392b;">立即开通</button>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>关于绝代封神</h3>
+                <p style="font-size:14px; color:#bdc3c7; line-height:1.8;">
+                    我们致力于为读者提供最优质的在线漫画阅读体验，汇聚全网最热门的玄幻、热血、仙侠类漫画作品。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>快速导航</h3>
+                <ul>
+                    <li><a href="#">首页推荐</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">排行榜单</a></li>
+                    <li><a href="#">作者投稿</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>帮助中心</h3>
+                <ul>
+                    <li><a href="#">阅读指南</a></li>
+                    <li><a href="#">会员充值</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>关注我们</h3>
+                <div style="display:flex; gap:10px;">
+                    <div style="width:40px; height:40px; background:#34495e; border-radius:4px; display:flex; align-items:center; justify-content:center;">WX</div>
+                    <div style="width:40px; height:40px; background:#34495e; border-radius:4px; display:flex; align-items:center; justify-content:center;">WB</div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 绝代封神漫画网 版权所有 | 本站内容仅供学习交流，请勿用于商业用途</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        }
+
+        // Simple Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.position = 'fixed';
+            toast.style.bottom = '20px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.backgroundColor = 'rgba(0,0,0,0.8)';
+            toast.style.color = 'white';
+            toast.style.padding = '12px 24px';
+            toast.style.borderRadius = '4px';
+            toast.style.zIndex = '1000';
+            toast.style.fontSize = '14px';
+            toast.textContent = message;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.5s';
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 500);
+            }, 2000);
+        }
+
+        // Scroll to content helper
+        function scrollToContent() {
+            document.getElementById('comic-list').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Filter Button Interaction
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                showToast(`已切换至：${this.textContent}`);
+            });
+        });
+    </script>
+</body>
+                          </html>
