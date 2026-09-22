@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>be动词 - 英语语法核心用法详解与练习</title>
+    <meta name="description" content="be动词专题学习网站，提供be动词的用法总结、一般现在时与过去时态区别、常见错误分析及在线语法练习，帮助初学者掌握英语基础语法。">
+    <meta name="keywords" content="be动词,英语语法,am is are用法,一般现在时,过去式,语法练习">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-radius: 12px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* 头部 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-main);
+            letter-spacing: -0.025em;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            text-align: left;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        /* 语法结构区 */
+        .section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .usage-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            border: 1px solid #e2e8f0;
+        }
+
+        .usage-item .label {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .usage-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .usage-item ul {
+            margin-top: var(--spacing-md);
+        }
+
+        .usage-item li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .usage-item li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* 规则表格 */
+        .table-container {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            overflow: hidden;
+            margin-top: var(--spacing-lg);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 16px 24px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* 常见错误 */
+        .error-section {
+            background-color: #fff1f2;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .error-item {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            align-items: flex-start;
+        }
+
+        .error-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .error-code {
+            background: #ffe4e6;
+            color: #be123c;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .error-desc h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .error-desc p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 练习区 */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .options {
+            display: grid;
+            gap: var(--spacing-sm);
+        }
+
+        .option-btn {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .option-btn:hover {
+            border-color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .option-btn.selected {
+            border-color: var(--primary-color);
+            background-color: #eff6ff;
+            color: var(--primary-color);
+        }
+
+        .option-btn.correct {
+            border-color: #22c55e;
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .option-btn.wrong {
+            border-color: #ef4444;
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .feedback {
+            margin-top: var(--spacing-md);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.success {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .feedback.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 40px 0;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* 移动端简化：隐藏菜单 */
+            }
+
+            .nav-wrapper {
+                justify-content: center;
+            }
+
+            th, td {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h.01"/><path d="M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20V8"/><path d="M22 4v16"/></svg>
+                Be动词语法网
+            </div>
+            <nav class="nav-links">
+                <a href="#usage">用法详解</a>
+                <a href="#rules">规则表格</a>
+                <a href="#common">常见错误</a>
+                <a href="#quiz">在线练习</a>
+            </nav>
+            <a href="#quiz" class="cta-btn">开始练习</a>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>掌握 be动词，夯实英语基础</h1>
+                <p>be动词是英语中最核心的动词之一，用于构成系表结构、进行时态和被动语态。本站提供系统的用法解析、规则总结及互动练习。</p>
+                
+                <div class="hero-grid">
+                    <div class="hero-card">
+                        <h3>三种形式</h3>
+                        <p>根据主语的人称和单复数变化，主要分为 am, is, are 三种形式，是时态变化的基础。</p>
+                    </div>
+                    <div class="hero-card">
+                        <h3>时态核心</h3>
+                        <p>be动词是现在时和过去时的载体，理解它是掌握一般现在时和一般过去时的关键。</p>
+                    </div>
+                    <div class="hero-card">
+                        <h3>互动学习</h3>
+                        <p>通过场景化例句和针对性练习，快速纠正错误，提升语感。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 用法详解 -->
+        <section id="usage" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心用法详解</h2>
+                    <p>理解 be动词在不同语境下的功能</p>
+                </div>
+
+                <div class="usage-grid">
+                    <!-- 用法1 -->
+                    <article class="usage-item">
+                        <span class="label">系动词</span>
+                        <h3>表示状态</h3>
+                        <p>be动词最基本的功能是连接主语和表语，描述主语的特征、身份或状态。</p>
+                        <ul>
+                            <li>I <strong>am</strong> a student. (我是学生)</li>
+                            <li>She <strong>is</strong> happy. (她很快乐)</li>
+                            <li>The apples <strong>are</strong> red. (苹果是红色的)</li>
+                        </ul>
+                    </article>
+
+                    <!-- 用法2 -->
+                    <article class="usage-item">
+                        <span class="label">进行时态</span>
+                        <h3>表示动作</h3>
+                        <p>be动词加上现在分词构成现在进行时，表示正在发生的动作。</p>
+                        <ul>
+                            <li>They <strong>are playing</strong> football. (他们在踢足球)</li>
+                            <li>He <strong>is sleeping</strong>. (他在睡觉)</li>
+                            <li>It <strong>is raining</strong>. (正在下雨)</li>
+                        </ul>
+                    </article>
+
+                    <!-- 用法3 -->
+                    <article class="usage-item">
+                        <span class="label">被动语态</span>
+                        <h3>表示承受</h3>
+                        <p>be动词加上过去分词构成被动语态，表示动作的承受者。</p>
+                        <ul>
+                            <li>The letter <strong>was written</strong> yesterday. (信昨天被写好了)</li>
+                            <li>English <strong>is spoken</strong> here. (这里说英语)</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 规则表格 -->
+        <section id="rules" class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <div class="section-title">
+                    <h2>主谓一致规则</h2>
+                    <p>如何根据主语选择 am, is 还是 are</p>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>主语类型</th>
+                                <th>be动词形式</th>
+                                <th>例句</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I (第一人称单数)</td>
+                                <td><strong>am</strong></td>
+                                <td>I <strong>am</strong> a teacher.</td>
+                            </tr>
+                            <tr>
+                                <td>单数名词 (He, She, It) / 第三人称单数</td>
+                                <td><strong>is</strong></td>
+                                <td>She <strong>is</strong> kind. It <strong>is</strong> cold.</td>
+                            </tr>
+                            <tr>
+                                <td>复数名词 / 第二人称 / 你我</td>
+                                <td><strong>are</strong></td>
+                                <td>We <strong>are</strong> friends. You <strong>are</strong> welcome.</td>
+                            </tr>
+                            <tr>
+                                <td>不可数名词</td>
+                                <td><strong>is</strong></td>
+                                <td>Water <strong>is</strong> necessary.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见错误 -->
+        <section id="common" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见错误分析</h2>
+                    <p>避开学习过程中的“坑”</p>
+                </div>
+
+                <div class="error-section">
+                    <div class="error-item">
+                        <div class="error-code">错误</div>
+                        <div class="error-desc">
+                            <h4>错误形式：I are / He am</h4>
+                            <p>混淆了主语的人称代词与be动词的形式搭配。I只能用am，He/She/It只能用is。</p>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-code">错误</div>
+                        <div class="error-desc">
+                            <h4>错误形式：They are / We is</h4>
+                            <p>复数主语（包括We, You, They）必须使用are。</p>
+                        </div>
+                    </div>
+                    <div class="error-item">
+                        <div class="error-code">错误</div>
+                        <div class="error-desc">
+                            <h4>错误形式：This apple are red</h4>
+                            <p>当主语是单数名词（包括This, That, Every, Each等修饰的单数名词）时，be动词必须用is。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 互动练习 -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>在线语法练习</h2>
+                    <p>测试你的掌握程度</p>
+                </div>
+
+                <div class="quiz-container">
+                    <!-- 题目 1 -->
+                    <div class="quiz-card" data-question="1">
+                        <div class="question-text">1. _____ you happy today?</div>
+                        <div class="options">
+                            <button class="option-btn" onclick="checkAnswer(this, false)">Is</button>
+                            <button class="option-btn" onclick="checkAnswer(this, true)">Are</button>
+                            <button class="option-btn" onclick="checkAnswer(this, false)">Am</button>
+                            <button class="option-btn" onclick="checkAnswer(this, false)">Be</button>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <!-- 题目 2 -->
+                    <div class="quiz-card" data-question="2">
+                        <div class="question-text">2. The cat _____ sleeping on the sofa.</div>
+                        <div class="options">
+                            <button class="option-btn" onclick="checkAnswer(this, false)">am</button>
+                            <button class="option-btn" onclick="checkAnswer(this, false)">is</button>
+                            <button class="option-btn" onclick="checkAnswer(this, true)">are</button>
+                            <button class="option-btn" onclick="checkAnswer(this, false)">be</button>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <!-- 题目 3 -->
+                    <div class="quiz-card" data-question="3">
+                        <div class="question-text">3. _____ he your brother?</div>
+                        <div class="options">
+                            <button class="option-btn" onclick="checkAnswer(this, true)">Is</button>
+                            <button class="option-btn" onclick="checkAnswer(this, false)">Are</button>
+                            <button class="option-btn" onclick="checkAnswer(this, false)">Am</button>
+                            <button class="option-btn" onclick="checkAnswer(this, false)">Be</button>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p style="font-size: 0.9rem; color: #64748b;">专注于英语语法基础教学，提供清晰的解析和实用的练习工具。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#usage">用法详解</a></li>
+                        <li><a href="#rules">规则表格</a></li>
+                        <li><a href="#quiz">语法练习</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>学习资源</h4>
+                    <ul>
+                        <li><a href="#">一般现在时</a></li>
+                        <li><a href="#">被动语态</a></li>
+                        <li><a href="#">时态对比</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Be动词语法网. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function checkAnswer(btn, isCorrect) {
+            // 获取当前题目卡片和选项按钮
+            const card = btn.closest('.quiz-card');
+            const options = card.querySelectorAll('.option-btn');
+            const feedback = card.querySelector('.feedback');
+
+            // 禁用所有选项，防止重复点击
+            options.forEach(opt => {
+                opt.disabled = true;
+                opt.classList.remove('selected');
+            });
+
+            // 显示正确或错误样式
+            if (isCorrect) {
+                btn.classList.add('correct');
+                feedback.textContent = "回答正确！";
+                feedback.className = "feedback show success";
+            } else {
+                btn.classList.add('wrong');
+                feedback.textContent = "回答错误，请查看解析。";
+                feedback.className = "feedback show error";
+                
+                // 自动高亮正确答案
+                options.forEach(opt => {
+                    if (opt.getAttribute('onclick').includes('true')) {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
